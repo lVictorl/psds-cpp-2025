@@ -4,6 +4,14 @@
 #include <cmath>
 #include <algorithm>
 
+void PrintRoot(double root) {
+    if (std::abs(root) < 1e-10) {  // Проверяем, близок ли корень к нулю
+        std::cout << "0";
+    } else {
+        std::cout << root;
+    }
+}
+
 void SolveQuadratic(int a, int b, int c)
 {
     // throw std::runtime_error{"Not implemented"};
@@ -28,7 +36,7 @@ void SolveQuadratic(int a, int b, int c)
         {
             // Линейное уравнение: bx + c = 0
             double root = -static_cast<double>(c) / b;
-            std::cout << root;
+            PrintRoot(root);
         }
         return;
     }
@@ -44,7 +52,7 @@ void SolveQuadratic(int a, int b, int c)
     {
         // Один корень
         double root = -static_cast<double>(b) / (2.0 * a);
-        std::cout << root;
+        PrintRoot(root);
     }
     else
     {
@@ -58,7 +66,8 @@ void SolveQuadratic(int a, int b, int c)
         {
             std::swap(root1, root2);
         }
-
-        std::cout << root1 << " " << root2;
+        PrintRoot(root1);
+        std::cout << " ";
+        PrintRoot(root2);
     }
 }
