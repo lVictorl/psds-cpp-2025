@@ -2,7 +2,6 @@
 
 void SwapPtr(int *&ptr1, int *&ptr2)
 {
-    // throw std::runtime_error{"Not implemented"};
     int *temp = ptr1;
     ptr1 = ptr2;
     ptr2 = temp;
