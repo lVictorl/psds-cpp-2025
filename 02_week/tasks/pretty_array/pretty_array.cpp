@@ -1,4 +1,5 @@
 #include <stdexcept>
+<<<<<<< HEAD
 #include <iostream>
 
 void PrintArray(const int *begin, const int *end, size_t limit = 0)
@@ -95,4 +96,10 @@ void PrintArray(const int *begin, const int *end, size_t limit = 0)
     }
 
     std::cout << "]\n";
+=======
+
+
+void PrintArray(/* write arguments here */) {
+    throw std::runtime_error{"Not implemented"};
+>>>>>>> 4477f12d1d360b59708503f7b0b325acb0c5bc52
 }

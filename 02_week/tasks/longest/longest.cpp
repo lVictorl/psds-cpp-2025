@@ -1,5 +1,6 @@
 #include <stdexcept>
 
+<<<<<<< HEAD
 const char *FindLongestSubsequence(const char *begin, const char *end, size_t &count)
 {
     // throw std::runtime_error{"Not implemented"};
@@ -55,4 +56,9 @@ const char *FindLongestSubsequence(const char *begin, const char *end, size_t &c
 
     count = max_length;
     return longest_start;
+=======
+
+/* return_type */ FindLongestSubsequence(/* ptr_type */ begin, /* ptr_type */ end, /* type */ count) {
+    throw std::runtime_error{"Not implemented"};
+>>>>>>> 4477f12d1d360b59708503f7b0b325acb0c5bc52
 }

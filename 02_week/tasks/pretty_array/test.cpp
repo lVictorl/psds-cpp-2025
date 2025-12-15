@@ -27,6 +27,7 @@ protected:
     std::streambuf* origin_cout;
 };
 
+<<<<<<< HEAD
 TEST(FunctionSignatureTest, IntSignature) {
     static_assert(std::is_same_v<decltype(static_cast<void (*)(int, bool)>(&PrintMemory)), void (*)(int, bool)>,
         "function must have signature: void PrintMemory(int, bool)");
@@ -37,6 +38,8 @@ TEST(FunctionSignatureTest, DoubleSignature) {
         "function must have signature: void PrintMemory(double, bool)");
 }
 
+=======
+>>>>>>> 4477f12d1d360b59708503f7b0b325acb0c5bc52
 TEST_F(PrintArrayTest, EmptyArray) {
     int arr[] = {1};
     PrintArray(arr, arr);

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <cstring>
 #include <stdexcept>
 #include <iostream>
@@ -76,4 +77,15 @@ void PrintMemory(int value)
 void PrintMemory(double value)
 {
     PrintMemory(value, false);
+=======
+#include <stdexcept>
+
+
+void PrintMemory(int /* write arguments here */) {
+    throw std::runtime_error{"Not implemented"};
+}
+
+void PrintMemory(double /* write arguments here */) {
+    throw std::runtime_error{"Not implemented"};
+>>>>>>> 4477f12d1d360b59708503f7b0b325acb0c5bc52
 }
