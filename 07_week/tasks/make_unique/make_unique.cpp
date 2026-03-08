@@ -1,11 +1,11 @@
 // Собственная реализация forward (аналог std::forward)
 template <typename T>
-T&& forward(typename std::remove_reference<T>::type& arg) noexcept {
+T&& forward2(typename std::remove_reference<T>::type& arg) noexcept {
     return static_cast<T&&>(arg);
 }
 
 template <typename T>
-T&& forward(typename std::remove_reference<T>::type&& arg) noexcept {
+T&& forward2(typename std::remove_reference<T>::type&& arg) noexcept {
     return static_cast<T&&>(arg);
 }
 
@@ -84,5 +84,5 @@ class unique_ptr {
 // Собственная функция MakeUnique
 template <typename T, typename... Args>
 unique_ptr<T> MakeUnique(Args&&... args) {
-    return unique_ptr<T>(new T(forward<Args>(args)...));
+    return unique_ptr<T>(new T(forward2<Args>(args)...));
 }
