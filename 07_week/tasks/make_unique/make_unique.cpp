@@ -1,11 +1,13 @@
-// Собственная реализация forward (аналог std::forward)
+// Собственная реализация forward (аналог std::forward) закомментирована,
+// чтобы избежать конфликта со стандартной версией, подключаемой через тесты.
+/*
 template <typename T>
-T&& forward2(typename std::remove_reference<T>::type& arg) noexcept {
+T&& forward(typename std::remove_reference<T>::type& arg) noexcept {
     return static_cast<T&&>(arg);
 }
 
 template <typename T>
-T&& forward2(typename std::remove_reference<T>::type&& arg) noexcept {
+T&& forward(typename std::remove_reference<T>::type&& arg) noexcept {
     return static_cast<T&&>(arg);
 }
 
@@ -80,9 +82,14 @@ class unique_ptr {
     // Проверка на nullptr
     explicit operator bool() const noexcept { return ptr != nullptr; }
 };
+*/
 
-// Собственная функция MakeUnique
+// Подключаем стандартные компоненты, необходимые для MakeUnique
+#include <memory>   // std::unique_ptr
+#include <utility>  // std::forward
+
+// Собственная функция MakeUnique, использующая стандартные std::unique_ptr и std::forward
 template <typename T, typename... Args>
-unique_ptr<T> MakeUnique(Args&&... args) {
-    return unique_ptr<T>(new T(forward2<Args>(args)...));
+std::unique_ptr<T> MakeUnique(Args&&... args) {
+    return std::unique_ptr<T>(new T(std::forward<Args>(args)...));
 }
